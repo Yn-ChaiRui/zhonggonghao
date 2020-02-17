@@ -1,8 +1,8 @@
 import dva from 'dva';
 import './index.css';
 // import example from './models/example.js'
-// import Domea from './models/01Demo.js'
-import {charu} from './models/example.js'
+// import Domea from './models/Demo.js'
+import {charu} from './models/baolu'
 
 // 1. Initialize
 const app = dva();

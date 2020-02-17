@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
-import Demoa from './001Demo.js'
+import Demoa from './Demoa.js'
 
 function IndexPage({ name }) {
   console.log(name)

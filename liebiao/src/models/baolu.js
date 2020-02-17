@@ -1,5 +1,5 @@
-import example from './models/example.js'
-import Domea from './models/01Demo.js'
+import example from './example.js'
+import Domea from './Demo.js'
 
 export function charu(app){
     app.model(example);
