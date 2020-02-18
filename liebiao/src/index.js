@@ -1,8 +1,8 @@
 import dva from 'dva';
 import './index.css';
-// import example from './models/example.js'
-// import Domea from './models/Demo.js'
-import {charu} from './models/baolu'
+// import example from './models/example'
+// import demo from './models/demo'
+import {zhuru} from './models/index' 
 
 // 1. Initialize
 const app = dva();
@@ -15,9 +15,9 @@ const app = dva();
 
 // 4. Router
 app.router(require('./router').default);
-// app.model(example);  第一个
-// app.model(Domea);   第二个
-    charu(app)
+// app.model(example);
+// app.model(demo);
+zhuru(app);
 
 // 5. Start
 app.start('#root');

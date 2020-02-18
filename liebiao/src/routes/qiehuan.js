@@ -1,15 +1,11 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
-import Demo from './Demo'
-import Qiehuan from './qiehuan'
 
-function Demoa({name}) {
-  console.log(name)
+function Qiehuan({flag}) {
   return (
     <div className={styles.normal}>
-      <Demo />
-      <Qiehuan />
+      <h1 className={styles.title}>{flag?'1111':'2222'}</h1>
     </div>
   );
 }
@@ -18,9 +14,9 @@ function Demoa({name}) {
 // };
 
 // export default connect()(IndexPage);
-Demoa = connect((state)=>{
+Qiehuan = connect((state)=>{
   return{
-    ...state.example
+    ...state.demo
   };
-})(Demoa);
-export default Demoa;
+})(Qiehuan);
+export default Qiehuan;

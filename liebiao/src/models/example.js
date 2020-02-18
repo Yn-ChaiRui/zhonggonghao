@@ -4,7 +4,7 @@ export default {
   namespace: 'example',
 
   state: {
-    name:'我应该是第一个Demo'
+    name:'我是第一个Demo'
   },
 
   subscriptions: {

@@ -1,10 +1,10 @@
 
 export default {
 
-    namespace: 'Demoa',
+    namespace: 'demo',
   
     state: {
-      name:'我应该是第二个Demo'
+      flag:true
     },
   
     subscriptions: {
@@ -19,9 +19,15 @@ export default {
     },
   
     reducers: {
-      save(state, action) {
-        return { ...state, ...action.payload };
-      },
+      // save(state, action) {
+      //   return { ...state, ...action.payload };
+      // },
+      setState(state,{payload}){
+        return{
+          ...state,
+          ...payload
+        };
+      }
     },
   
   };
