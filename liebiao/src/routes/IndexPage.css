@@ -27,3 +27,83 @@
 .list code {
   background: #f7f7f7;
 }
+
+.logo{
+  width: 200px;
+  height: 64px;
+  background: url('../assets/logo.png');
+  background-size:200px 64px;
+  float: left;
+}
+.box1{
+  float: left;
+}
+
+.biaoqian{
+  text-align: left;
+}
+
+.shiliang{
+  width: 40px;
+  height: 64px;
+  /* background: red; */
+  float: left;
+  text-align: center;
+  line-height: 64px;
+  font-size: 20px;
+}
+
+.youbox{
+  width: 300px;
+  height: 64px;
+  float: right;
+  /* background: red; */
+}
+.xiala{
+  float: left;
+}
+.shiliang{
+  width: 34px;
+  height: 64px;
+  text-align: center;
+  line-height: 64px;
+  margin-left: 15px;
+}
+.ziti{
+  font-size: 25px;
+}
+.touxiang{
+  width: 34px;
+  height: 64px;
+  float: left;
+  text-align: center;
+  line-height: 64px;
+  margin-left: 15px;
+}
+
+.xialab{
+  float: left;
+  margin-left: 10px;
+}
+
+.youbian{
+  width: 100%;
+  height: 100%;
+  padding: 24px 24px;
+}
+
+.anniu{
+  float: left;
+  margin-right: 10px;
+}
+
+.anniub{
+  float: right;
+}
+
+.duihua{
+ float: right;
+}
+.anniub{
+  float: left;
+}
