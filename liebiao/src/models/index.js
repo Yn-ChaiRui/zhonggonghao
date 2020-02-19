@@ -1,4 +1,4 @@
-import demo from "./demo";
+import demo from "./Demo";
 import example from "./example";
 
 export function zhuru(app){

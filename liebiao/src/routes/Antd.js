@@ -1,27 +1,56 @@
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon, Dropdown, Avatar} from 'antd';
+import { Link,Router, Route, Switch,withRouter } from 'dva/router';
+import Yonghu from './Antdyonghu'
+import Jiaose from './sss'
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
+
+const menu = (
+  <Menu>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">
+        1st menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">
+        2nd menu item
+      </a>
+    </Menu.Item>
+    <Menu.Item>
+      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
+        3rd menu item
+      </a>
+    </Menu.Item>
+  </Menu>
+);
 
 function Demo({ dispatch, flag }) {
   console.log(flag)
   return (
     <Layout>
-    <Header className="header">
-      <div className="logo" />
-      <Menu
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        style={{ lineHeight: '64px' }}
-      >
-        <Menu.Item key="1">nav 1</Menu.Item>
-        <Menu.Item key="2">nav 2</Menu.Item>
-        <Menu.Item key="3">nav 3</Menu.Item>
-      </Menu>
+      {/* <Router> */}
+    <Header className="header" style={{background:'#fff',padding:'0'}}>
+    <div className={styles.logo}></div>
+    <div className={styles.shiliang}><Icon type="menu-fold" /></div>
+    <div className={styles.youbox}>
+    <Dropdown overlay={menu} className={styles.xiala}>
+    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+      切换主题 <Icon type="down" />
+    </a>
+  </Dropdown>
+  <div className={styles.shiliang}><Icon type="bell" className={styles.ziti}/></div>
+  <div className={styles.touxiang}><Avatar src="https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png" /></div>
+  <Dropdown overlay={menu} className={styles.xialab}>
+    <a className="ant-dropdown-link" onClick={e => e.preventDefault()}>
+      名  字 <Icon type="down" />
+    </a>
+  </Dropdown>
+    </div>
     </Header>
     <Layout>
       <Sider width={200} style={{ background: '#fff' }}>
@@ -34,69 +63,70 @@ function Demo({ dispatch, flag }) {
           <SubMenu
             key="sub1"
             title={
-              <span>
+              <span className={styles.box1}>
                 <Icon type="bank" />
                 系统
               </span>
             }
           >
-            <Menu.Item key="1"><Icon type="setting" />系统配置项</Menu.Item>
-            <Menu.Item key="2"><Icon type="setting" />系统入口</Menu.Item>
-            <Menu.Item key="3"><Icon type="bars" />菜单</Menu.Item>
-            <Menu.Item key="4"><Icon type="solution" />审计日志</Menu.Item>
-            <Menu.Item key="5"><Icon type="solution" />公告通告</Menu.Item>
+            <Menu.Item key="1" className={styles.biaoqian}><Icon type="setting" />系统配置项</Menu.Item>
+            <Menu.Item key="2" className={styles.biaoqian}><Icon type="setting" />系统入口</Menu.Item>
+            <Menu.Item key="3" className={styles.biaoqian}><Icon type="bars" />菜单</Menu.Item>
+            <Menu.Item key="4" className={styles.biaoqian}><Icon type="solution" />审计日志</Menu.Item>
+            <Menu.Item key="5" className={styles.biaoqian}><Icon type="solution" />公告通告</Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub2"
             title={
-              <span>
+              <span className={styles.box1}>
                 <Icon type="user" />
                 用户管理
               </span>
             }
           >
-            <Menu.Item key="6"><Icon type="apple" />组织机构</Menu.Item>
-            <Menu.Item key="7"><Icon type="trademark" />角色</Menu.Item>
-            <Menu.Item key="8"><Icon type="user" />用户</Menu.Item>
-            <Menu.Item key="9"><Icon type="profile" />班组管理</Menu.Item>
+            <Menu.Item key="6" className={styles.biaoqian}><Icon type="apple" />组织机构</Menu.Item>
+            <Menu.Item key="7" className={styles.biaoqian}><Link to="/jiaose"><Icon type="trademark" />角色</Link></Menu.Item>
+            <Menu.Item key="8" className={styles.biaoqian}><Link to="/yonghu"><Icon type="user" />用户</Link></Menu.Item>
+            <Menu.Item key="9" className={styles.biaoqian}><Icon type="profile" />班组管理</Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub3"
             title={
-              <span>
-                <Icon type="notification" />
+              <span className={styles.box1}>
+                <Icon type="wallet" />
                 数据管理
               </span>
             }
           >
-            <Menu.Item key="10">标签组管理</Menu.Item>
-            <Menu.Item key="11">资源管理</Menu.Item>
-            <Menu.Item key="12">技能管理</Menu.Item>
-            <Menu.Item key="13">谜题等级管理</Menu.Item>
-            <Menu.Item key="14">微型世界主题</Menu.Item>
-            <Menu.Item key="15">学习资料</Menu.Item>
-            <Menu.Item key="16">收藏品管理</Menu.Item>
+            <Menu.Item key="10" className={styles.biaoqian}><Icon type="appstore" />标签组管理</Menu.Item>
+            <Menu.Item key="11" className={styles.biaoqian}><Icon type="hdd" />资源管理</Menu.Item>
+            <Menu.Item key="12" className={styles.biaoqian}><Icon type="wallet" />技能管理</Menu.Item>
+            <Menu.Item key="13" className={styles.biaoqian}><Icon type="wallet" />谜题等级管理</Menu.Item>
+            <Menu.Item key="14" className={styles.biaoqian}><Icon type="wallet" />微型世界主题</Menu.Item>
+            <Menu.Item key="15" className={styles.biaoqian}><Icon type="wallet" />学习资料</Menu.Item>
+            <Menu.Item key="16" className={styles.biaoqian}><Icon type="wallet" />收藏品管理</Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub4"
             title={
-              <span>
+              <span className={styles.box1}>
                 <Icon type="notification" />
                 世界运营
               </span>
             }
           >
-              <Menu.Item key="17">学习资料</Menu.Item>
-            <Menu.Item key="18">收藏品管理</Menu.Item>
+              <Menu.Item key="17" className={styles.biaoqian}>学习资料</Menu.Item>
+            <Menu.Item key="18" className={styles.biaoqian}>收藏品管理</Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>
       <Layout style={{ padding: '0 24px 24px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
+        {/* <Breadcrumb style={{ margin: '16px 0' }}>
           <Breadcrumb.Item>Home</Breadcrumb.Item>
           <Breadcrumb.Item>List</Breadcrumb.Item>
           <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
+        </Breadcrumb> */}
+        <div className={styles.youbian}>
         <Content
           style={{
             background: '#fff',
@@ -104,11 +134,15 @@ function Demo({ dispatch, flag }) {
             margin: 0,
             minHeight: 280,
           }}
-        >
-          Content
+        > <Route path="/jiaose"   component={Jiaose} />
+          <Route path="/yonghu"   component={Yonghu} />
+         
+         
         </Content>
+        </div>
       </Layout>
     </Layout>
+    {/* </Router> */}
   </Layout>
   );
 }
@@ -122,4 +156,4 @@ Demo = connect((state) => {
     ...state.demo
   };
 })(Demo);
-export default Demo;
+export default withRouter(Demo);

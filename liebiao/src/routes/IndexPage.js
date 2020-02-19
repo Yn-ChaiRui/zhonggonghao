@@ -8,8 +8,8 @@ function Demoa({name}) {
   console.log(name)
   return (
     <div className={styles.normal}>
-      <Demo />
-      <Qiehuan />
+      {/* <Demo /> */}
+      {/* <Qiehuan /> */}
       <Antd />
     </div>
   );

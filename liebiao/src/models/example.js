@@ -4,7 +4,7 @@ export default {
   namespace: 'example',
 
   state: {
-    name:'我是第一个Demo'
+    flag:"1"
   },
 
   subscriptions: {
@@ -19,8 +19,8 @@ export default {
   },
 
   reducers: {
-    save(state, action) {
-      return { ...state, ...action.payload };
+    setState(state, {payload}) {
+      return { ...state, ...payload };
     },
   },
 
