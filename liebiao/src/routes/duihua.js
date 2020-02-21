@@ -1,4 +1,4 @@
-import { Button, Drawer, Tabs,Divider  } from 'antd';
+import { Button, Drawer, Tabs,Divider ,Checkbox,Input   } from 'antd';
 import React from 'react';
 import { connect } from 'dva';
 import styles from './IndexPage.css';
@@ -11,9 +11,13 @@ function callback(key) {
     console.log(key);
 }
 
-
+function onChange(checkedValues) {
+    console.log('checked = ', checkedValues);
+  }
+  const plainOptions = ['Admin', ];
+  const sidianban = ['四点半教育', ];
 const ButtonGroup = Button.Group;
-
+const { Search } = Input;
 class Duihua extends React.Component {
     state = {
         visible: false,
@@ -81,10 +85,35 @@ class Duihua extends React.Component {
                             <div className={styles.boxc}><Xinxi /></div>
                         </TabPane>
                         <TabPane tab="角色" key="2">
-                            Content of Tab Pane 2
+                        <div>
+    <Checkbox.Group options={plainOptions} defaultValue={['Apple']} onChange={onChange} />
+    <br />
+    <br />
+    
+    <br />
+    <br />
+    
+  </div>
     </TabPane>
                         <TabPane tab="组织机构" key="3">
-                            Content of Tab Pane 3
+                        <div>
+    <Search
+      placeholder="请输入关键字搜索"
+      onSearch={value => console.log(value)}
+      style={{ width: 300 }}
+    />
+    <br />
+    <br />
+    </div>
+    <div>
+    <Checkbox.Group options={sidianban} defaultValue={['Apple']} onChange={onChange} />
+    <br />
+    <br />
+    
+    <br />
+    <br />
+    
+  </div>
     </TabPane>
                     </Tabs></p>
                     <p className={styles.fenge}><Divider /></p>

@@ -14,17 +14,13 @@ import {
   import React from 'react';
   import styles from './IndexPage.css';
   import { connect } from 'dva';
-  import Xuesheng from './xuesheng'
-  import Jiazhang from './jiazhang'
-  import Daoshi from './daoshi'
-  import Guanliyuan from './guanliyuan'
 
   const { Option } = Select;
   const AutoCompleteOption = AutoComplete.Option;
   
  
   
-  class Xinxi extends React.Component {
+  class Jiazhang extends React.Component {
     state = {
       confirmDirty: false,
       autoCompleteResult: [],
@@ -75,6 +71,8 @@ import {
     render() {
       const { getFieldDecorator } = this.props.form;
       const { autoCompleteResult } = this.state;
+
+      
   
       const {flag}=this.props
       const formItemLayout = {
@@ -106,72 +104,38 @@ import {
       ));
   
       return (
-          
-        <Form {...formItemLayout} onSubmit={this.handleSubmit}>
-          {
-            flag==1?<Xuesheng />:true
-            
-            }
-          {
-            flag==2?<Jiazhang />:true
-          }
-          {
-            flag==3?<Daoshi />:true
-          }
-          {
-            flag==4?<Guanliyuan />:true
-          }
-          {/* <Form.Item label="创建密码" labelAlign="left">
-            {getFieldDecorator('password', {
-              rules: [
-                {
-                  required: true,
-                  message: 'Please input your password!',
-                },
-                {
-                  validator: this.validateToNextPassword,
-                },
-              ],
-            })(<Input placeholder="请填写密码" className={styles.shuru}/>)}
-          </Form.Item>
-          <Form.Item label="姓名" labelAlign="left">
-          {getFieldDecorator('usernamea', {
-            rules: [{ required: true, message: 'Please input your username!' }],
-          })(<Input className={styles.shuru} placeholder="请填写姓名"/>,
-          )}
-          </Form.Item>
-          <Form.Item label="昵称" labelAlign="left">
-          {getFieldDecorator('nickname', {
-            rules: [{ required: false, message: 'Please input your nickname!', whitespace: true }],
-          })(<Input className={styles.shuru} placeholder="请填写昵称(6个字符以内)"/>)}
+          <div>
+         <Form.Item label="手机号" labelAlign="left">
+          {getFieldDecorator('shouji', {
+            rules: [{ required: true, message: 'Please input your Phone!' }],
+          })(<Input className={styles.shuru} placeholder="请填写手机号"/>)}
         </Form.Item>
-          <Form.Item label="加入班组" labelAlign="left">
-          {getFieldDecorator('gender', {
-            rules: [{ required: false, message: 'Please select your gender!' }],
-          })(
-            <Select 
-              placeholder=""
-              onChange={this.handleSelectChange}
-              className={styles.shuru}
-            >
-              <Option value="xxbana">XX班级</Option>
-              <Option value="xxbanb">XX班级</Option>
-              <Option value="xxbanc">XX班级</Option>
-              <Option value="xxband">XX班级</Option>
-            </Select>,
-          )}
-        </Form.Item> */}
-        </Form>
+        <Form.Item label="用户名" labelAlign="left">
+          {getFieldDecorator('name', {
+            rules: [{ required: true, message: 'Please input your name!' }],
+          })(<Input className={styles.shuru} placeholder="请填写用户名"/>)}
+        </Form.Item>
+        <Form.Item label="创建密码" labelAlign="left">
+          {getFieldDecorator('pwoass', {
+            rules: [{ required: true, message: 'Please input your mima!' }],
+          })(<Input className={styles.shuru} placeholder="请填写密码"/>)}
+        </Form.Item>
+        <Form.Item label="学生用户名" labelAlign="left">
+          {getFieldDecorator('xuesheng', {
+            rules: [{ required: false, message: 'Please input your name!' }],
+          })(<Input className={styles.shuru} placeholder="请选择学生"/>)}
+        </Form.Item>
+    </div>
       );
     }
   }
   
   // const WrappedRegistrationForm = Form.create({ name: 'register' })(Xinxi);
 
-  Xinxi = connect((state) => {
+  Jiazhang = connect((state) => {
     return {
       ...state.example
     };
-  })(Xinxi);
+  })(Jiazhang);
 
-  export default Form.create({ name: 'register' })(Xinxi);
+  export default Form.create({ name: 'register' })(Jiazhang);
