@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Table, Button, Menu, Dropdown, Icon } from 'antd';
+import { Table, Button, Menu, Dropdown, Icon,Input,Divider} from 'antd';
 import styles from './IndexPage.css';
 import Duihua from './duihua'
 
@@ -8,13 +8,13 @@ import Duihua from './duihua'
 function handleMenuClick(e) {
   console.log('click', e);
 }
-
+const { Search } = Input;
 const menu = (
   <Menu onClick={handleMenuClick}>
-    <Menu.Item key="1">1st item</Menu.Item>
-    <Menu.Item key="2">2nd item</Menu.Item>
-    <Menu.Item key="3">3rd item</Menu.Item>
-    <Menu.Item key="4">3rd item</Menu.Item>
+    <Menu.Item key="1">批量删除</Menu.Item>
+    <Menu.Item key="2">批量解锁</Menu.Item>
+    <Menu.Item key="3">批量启用</Menu.Item>
+    <Menu.Item key="4">批量禁用</Menu.Item>
   </Menu>
 );
 
@@ -153,8 +153,17 @@ class Yonghu extends React.Component {
     };
     const hasSelected = selectedRowKeys.length > 0;
     return (
-      <div>
+      
         <div style={{ marginBottom: 16 }}>
+          <div><Search
+      placeholder="请输入关键字搜索"
+      onSearch={value => console.log(value)}
+      style={{ width: 400,}}
+      className={styles.yidong}
+    />
+    <br />
+    <br />
+    <Divider />
           <div className={styles.anniu}><Duihua /></div>
           <Button className={styles.anniu}>导出EXCEL</Button>
           <Dropdown overlay={menu} className={styles.anniu}>
@@ -162,7 +171,7 @@ class Yonghu extends React.Component {
               更多操作 <Icon type="down" />
             </Button>
           </Dropdown>
-          <Dropdown overlay={xiala} className={styles.anniub}>
+          <Dropdown overlay={xiala} className={styles.anniubb}>
             <Button>
               自定义列表条目 <Icon type="down" />
             </Button>
@@ -171,7 +180,7 @@ class Yonghu extends React.Component {
             {hasSelected ? `Selected ${selectedRowKeys.length} items` : ''}
           </span>
         </div>
-        <Table rowSelection={rowSelection} columns={columns} dataSource={data} bordered={true} scroll={{ x: 1500, y: 700 }} />
+        <Table rowSelection={rowSelection} columns={columns} dataSource={data} bordered={true} scroll={{ x: 1500, y: 700 }} className={styles.table}/>
       </div>
     );
   }

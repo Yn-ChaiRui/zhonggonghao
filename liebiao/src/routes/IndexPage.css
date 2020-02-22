@@ -1,6 +1,6 @@
 
 .normal {
-  font-family: Georgia, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   margin-top: 3em;
   text-align: center;
 }
@@ -130,4 +130,26 @@
 }
 .anniub{
   float: left;
+}
+
+.yidong{
+  float: left;
+}
+
+.table{
+  position: relative;
+  top: 20px;
+}
+
+.anniubb{
+  float: right;
+}
+
+.fuhong{
+  float: left;
+  text-align: left;
+}
+
+.fuhong2{
+  float: right;
 }

@@ -5,6 +5,7 @@ import { Layout, Menu, Breadcrumb, Icon, Dropdown, Avatar} from 'antd';
 import { Link,Router, Route, Switch,withRouter } from 'dva/router';
 import Yonghu from './Antdyonghu'
 import Jiaose from './sss'
+import Banzu from './banzu'
 
 const { SubMenu } = Menu;
 const { Header, Content, Sider } = Layout;
@@ -87,7 +88,7 @@ function Demo({ dispatch, flag }) {
             <Menu.Item key="6" className={styles.biaoqian}><Icon type="apple" />组织机构</Menu.Item>
             <Menu.Item key="7" className={styles.biaoqian}><Link to="/jiaose"><Icon type="trademark" />角色</Link></Menu.Item>
             <Menu.Item key="8" className={styles.biaoqian}><Link to="/yonghu"><Icon type="user" />用户</Link></Menu.Item>
-            <Menu.Item key="9" className={styles.biaoqian}><Icon type="profile" />班组管理</Menu.Item>
+            <Menu.Item key="9" className={styles.biaoqian}><Link to="/banzu"><Icon type="profile" />班组管理</Link></Menu.Item>
           </SubMenu>
           <SubMenu
             key="sub3"
@@ -136,6 +137,8 @@ function Demo({ dispatch, flag }) {
           }}
         > <Route path="/jiaose"   component={Jiaose} />
           <Route path="/yonghu"   component={Yonghu} />
+          <Route path="/banzu"   component={Banzu} />
+
          
          
         </Content>
