@@ -20,6 +20,7 @@
       </a-checkbox>
     </a-form-item>
   </a-form>
+  
 </template>
 
 <script>

@@ -14,6 +14,7 @@
       </p>
      
     </a-modal>
+  
   </div>
 </template>
 <script>

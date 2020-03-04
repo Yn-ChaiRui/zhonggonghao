@@ -74,10 +74,10 @@
           <a-menu-item key="15">
             <a-icon type="wallet" />学习资料
           </a-menu-item>
-          <a-menu-item key="15">
+          <a-menu-item key="16">
             <a-icon type="wallet" />收藏品管理
           </a-menu-item>
-          <a-menu-item key="15">
+          <a-menu-item key="17">
             <a-icon type="wallet" />题库管理
           </a-menu-item>
         </a-sub-menu>

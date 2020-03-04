@@ -4,6 +4,8 @@ import Houtai from '../components/houtai.vue'
 import Jiaose from '../components/jiaose.vue'
 import Jiaoseb from '../components/jiaosebiao.vue'
 import From from '../components/fromtianjia.vue'
+import Biao from '../components/tlabiao.vue'
+
 
 Vue.use(Router)
 
@@ -27,6 +29,11 @@ export default new Router({
               path: '/Jiaose',
             name: 'From',
             component: From,
+            children:[{
+              path: '/Jiaose',
+              name: 'Biao',
+              component: Biao,
+            }]
             }]
           }
         ]
